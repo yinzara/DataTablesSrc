@@ -160,6 +160,11 @@ _api_register( 'destroy()', function ( remove ) {
 		if ( idx !== -1 ) {
 			DataTable.settings.splice( idx, 1 );
 		}
+                
+                /* Clear all attributes of settings to free memory */
+                for (var sKey in settings) {
+                    settings[sKey] = null;
+                }
 	} );
 } );
 
